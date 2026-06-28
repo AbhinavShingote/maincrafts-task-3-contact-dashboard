@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Maincrafts Technology Internship - Task 1
 
 ## Landing Page with Contact Form
@@ -65,3 +66,7 @@ Maincrafts Technology
 Java Full Stack Web Development Internship
 
 Task 1
+=======
+# maincrafts-task-1-landing-page
+Java Full Stack Internship Task 1 - Landing Page with Contact Form using Spring Boot
+>>>>>>> 66a199e84c89cbed2ad1ba4fd16c0cb6ac87ede2
