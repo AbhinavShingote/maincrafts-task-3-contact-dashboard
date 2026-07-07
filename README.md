@@ -1,16 +1,18 @@
-# 🚀 Maincrafts Technology Internship – Task 1
+# 🚀 Maincrafts Technology Internship – Task 2
 
 ## 📌 Project Name
 
-**Abhinav Portfolio – Landing Page with Contact Form**
+**Abhinav Portfolio – Contact Form with Spring Boot & MySQL**
 
-This project was developed as part of the **Maincrafts Technology Java Full Stack Web Development Internship (Task 1)**.
+This project was developed as part of the **Maincrafts Technology Java Full Stack Web Development Internship (Task 2)**.
 
 ---
 
 ## 📖 Project Description
 
-A responsive portfolio-style landing page developed using **HTML**, **CSS**, and **Spring Boot**. The application includes a contact form that sends user details to the Spring Boot backend using a **POST request**, where the submitted data is displayed in the IntelliJ console.
+This project extends the landing page created in Task 1 by integrating a **MySQL database** using **Spring Data JPA (Hibernate)**.
+
+Users can submit their details through the contact form, and the information is stored in the MySQL database. A REST API endpoint (`/contacts`) is also provided to retrieve all submitted contact details in JSON format.
 
 ---
 
@@ -19,12 +21,15 @@ A responsive portfolio-style landing page developed using **HTML**, **CSS**, and
 - 🌐 Responsive Landing Page
 - 🎨 Modern Dark Blue UI
 - 🧭 Navigation Bar
-- 👨‍💻 About Me Section
+- 👨‍💻 About Section
 - 💼 Services Section
 - 📬 Contact Form
 - ☕ Spring Boot Backend
-- 📨 POST Request Handling
-- 🖥 Console Output
+- 🗄️ MySQL Database Integration
+- 📦 Spring Data JPA (Hibernate)
+- 💾 Stores Contact Details in Database
+- 🔗 REST API (`/contacts`)
+- 📄 JSON Response
 - 📱 Mobile Friendly
 
 ---
@@ -33,26 +38,34 @@ A responsive portfolio-style landing page developed using **HTML**, **CSS**, and
 
 - HTML5
 - CSS3
-- Java
+- Java 21
 - Spring Boot
+- Spring Data JPA
+- Hibernate
+- MySQL
 - Maven
 - IntelliJ IDEA
+- MySQL Workbench
 - Git & GitHub
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 landingpage
 │
 ├── src
 │   ├── main
 │   │   ├── java
 │   │   │   └── com.abhinav.landingpage
-│   │   │       ├── LandingpageApplication.java
-│   │   │       └── controller
-│   │   │           └── ContactController.java
+│   │   │       ├── controller
+│   │   │       │   └── ContactController.java
+│   │   │       ├── model
+│   │   │       │   └── Contact.java
+│   │   │       ├── repository
+│   │   │       │   └── ContactRepository.java
+│   │   │       └── LandingpageApplication.java
 │   │   │
 │   │   └── resources
 │   │       ├── static
@@ -62,6 +75,7 @@ landingpage
 │   │
 │   └── test
 │
+├── screenshots
 ├── pom.xml
 ├── mvnw
 ├── mvnw.cmd
@@ -70,33 +84,93 @@ landingpage
 
 ---
 
-## ▶️ How to Run
+## 🗄️ Database Configuration
 
-1. Clone the repository.
+Database Name
 
-```bash
-git clone https://github.com/AbhinavShingote/maincrafts-task-1-landing-page.git
+```sql
+landingpage_db
 ```
 
-2. Open the project in **IntelliJ IDEA**.
+Table Name
 
-3. Run:
+```sql
+contacts
+```
+
+Spring Boot automatically creates the table using Hibernate.
+
+---
+
+## 🔗 REST API
+
+### Get All Contacts
+
+```http
+GET /contacts
+```
+
+Example Output
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Abhinav Shingote",
+    "email": "abhinavshingote00@gmail.com",
+    "message": "Hello Maincrafts"
+  }
+]
+```
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AbhinavShingote/maincrafts-task-2-springboot-mysql.git
+```
+
+### 2. Open the project in IntelliJ IDEA
+
+### 3. Create a MySQL database
+
+```sql
+CREATE DATABASE landingpage_db;
+```
+
+### 4. Update `application.properties`
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/landingpage_db
+spring.datasource.username=root
+spring.datasource.password=YOUR_PASSWORD
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+### 5. Run
 
 ```
 LandingpageApplication.java
 ```
 
-4. Open your browser and visit:
+### 6. Open
 
 ```
 http://localhost:8080
 ```
 
-5. Fill out the contact form.
+Submit the contact form.
 
-6. Click **Send Message**.
+### 7. View all contacts
 
-7. View the submitted data in the IntelliJ console.
+```
+http://localhost:8080/contacts
+```
 
 ---
 
@@ -126,9 +200,21 @@ http://localhost:8080
 
 ---
 
-## 🖥 Console Output
+## 🖥 IntelliJ Console
 
 ![Console Output](screenshots/console-output.png)
+
+---
+
+## 🗄️ MySQL Database
+
+![MySQL Database](screenshots/mysql-database.png)
+
+---
+
+## 🔗 REST API Output
+
+![REST API](screenshots/rest-api.png)
 
 ---
 
@@ -148,13 +234,13 @@ MIT Academy of Engineering (MITAOE)
 
 Java Full Stack Web Development Internship
 
-**Task 1**
+**Task 2**
 
 ---
 
 ## ⭐ GitHub Repository
 
-https://github.com/AbhinavShingote/maincrafts-task-1-landing-page
+https://github.com/AbhinavShingote/maincrafts-task-2-springboot-mysql
 
 ---
 
