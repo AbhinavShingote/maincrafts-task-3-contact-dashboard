@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>📋 Contact Management Dashboard</h1>
+
+    <p>All Contact Form Submissions</p>
+
+    <div class="dashboard-buttons">
+
+        <button onclick="loadContacts()" class="btn">
+            🔄 Refresh
+        </button>
+
+        <a href="/" class="btn secondary-btn">
+            ⬅ Back to Home
+        </a>
+
+    </div>
+
+    <table id="contactsTable">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="tableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script>
+
+    function loadContacts(){
+
+        fetch("/contacts")
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                let tableBody = document.getElementById("tableBody");
+
+                tableBody.innerHTML="";
+
+                data.forEach(contact=>{
+
+                    tableBody.innerHTML+=`
+
+            <tr>
+
+                <td>${contact.id}</td>
+
+                <td>${contact.name}</td>
+
+                <td>${contact.email}</td>
+
+                <td>${contact.message}</td>
+
+            </tr>
+
+            `;
+
+                });
+
+            });
+
+    }
+
+    loadContacts();
+
+</script>
+
+</body>
+
+</html>

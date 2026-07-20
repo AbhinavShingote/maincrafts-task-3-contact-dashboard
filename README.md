@@ -1,18 +1,20 @@
-# 🚀 Maincrafts Technology Internship – Task 2
+# 🚀 Maincrafts Technology Internship – Task 3
 
 ## 📌 Project Name
 
-**Abhinav Portfolio – Contact Form with Spring Boot & MySQL**
+**Abhinav Portfolio – Contact Management Dashboard**
 
-This project was developed as part of the **Maincrafts Technology Java Full Stack Web Development Internship (Task 2)**.
+This project was developed as part of the **Maincrafts Technology Java Full Stack Web Development Internship (Task 3)**.
 
 ---
 
 ## 📖 Project Description
 
-This project extends the landing page created in Task 1 by integrating a **MySQL database** using **Spring Data JPA (Hibernate)**.
+This project extends the landing page created in **Task 2** by adding a **Contact Management Dashboard**.
 
-Users can submit their details through the contact form, and the information is stored in the MySQL database. A REST API endpoint (`/contacts`) is also provided to retrieve all submitted contact details in JSON format.
+Users can submit their details through the contact form, and the information is stored in a **MySQL database** using **Spring Data JPA (Hibernate)**. The dashboard retrieves all stored contacts using a **Spring Boot REST API** and displays them dynamically using the **JavaScript Fetch API**.
+
+The project demonstrates the integration of frontend and backend technologies to build a complete Contact Management System.
 
 ---
 
@@ -29,7 +31,10 @@ Users can submit their details through the contact form, and the information is 
 - 📦 Spring Data JPA (Hibernate)
 - 💾 Stores Contact Details in Database
 - 🔗 REST API (`/contacts`)
-- 📄 JSON Response
+- 📋 Contact Management Dashboard
+- ⚡ JavaScript Fetch API
+- 🔄 Refresh Contacts Button
+- 🏠 Back to Home Button
 - 📱 Mobile Friendly
 
 ---
@@ -38,6 +43,7 @@ Users can submit their details through the contact form, and the information is 
 
 - HTML5
 - CSS3
+- JavaScript
 - Java 21
 - Spring Boot
 - Spring Data JPA
@@ -70,6 +76,7 @@ landingpage
 │   │   └── resources
 │   │       ├── static
 │   │       │   ├── index.html
+│   │       │   ├── contacts.html
 │   │       │   └── style.css
 │   │       └── application.properties
 │   │
@@ -86,13 +93,13 @@ landingpage
 
 ## 🗄️ Database Configuration
 
-Database Name
+### Database Name
 
 ```sql
 landingpage_db
 ```
 
-Table Name
+### Table Name
 
 ```sql
 contacts
@@ -110,7 +117,7 @@ Spring Boot automatically creates the table using Hibernate.
 GET /contacts
 ```
 
-Example Output
+### Example Output
 
 ```json
 [
@@ -125,12 +132,32 @@ Example Output
 
 ---
 
+## 📋 Contact Dashboard
+
+Open:
+
+```
+http://localhost:8080/contacts.html
+```
+
+The Contact Dashboard retrieves all submitted contact details from the `/contacts` REST API using the JavaScript Fetch API and displays them in a responsive table.
+
+### Dashboard Features
+
+- View all submitted contacts
+- Refresh contact list
+- Back to Home button
+- Responsive table layout
+- Dynamic data loading without page reload
+
+---
+
 ## ▶️ How to Run
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/AbhinavShingote/maincrafts-task-2-springboot-mysql.git
+git clone https://github.com/AbhinavShingote/maincrafts-task-3-contact-dashboard.git
 ```
 
 ### 2. Open the project in IntelliJ IDEA
@@ -158,7 +185,7 @@ spring.jpa.show-sql=true
 LandingpageApplication.java
 ```
 
-### 6. Open
+### 6. Open the Landing Page
 
 ```
 http://localhost:8080
@@ -166,7 +193,13 @@ http://localhost:8080
 
 Submit the contact form.
 
-### 7. View all contacts
+### 7. View the Dashboard
+
+```
+http://localhost:8080/contacts.html
+```
+
+### 8. View REST API
 
 ```
 http://localhost:8080/contacts
@@ -200,6 +233,12 @@ http://localhost:8080/contacts
 
 ---
 
+## 📋 Contact Dashboard
+
+![Contact Dashboard](screenshots/contact-dashboard.png)
+
+---
+
 ## 🖥 IntelliJ Console
 
 ![Console Output](screenshots/console-output.png)
@@ -222,9 +261,9 @@ http://localhost:8080/contacts
 
 **Abhinav Shingote**
 
-Computer Engineering Student
+Pre-Final Year B.Tech Computer Engineering Student
 
-MIT Academy of Engineering (MITAOE)
+MIT Academy of Engineering (MITAOE), Pune
 
 ---
 
@@ -234,13 +273,13 @@ MIT Academy of Engineering (MITAOE)
 
 Java Full Stack Web Development Internship
 
-**Task 2**
+**Task 3**
 
 ---
 
 ## ⭐ GitHub Repository
 
-https://github.com/AbhinavShingote/maincrafts-task-2-springboot-mysql
+https://github.com/AbhinavShingote/maincrafts-task-3-contact-dashboard
 
 ---
 
